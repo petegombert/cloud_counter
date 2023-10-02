@@ -1,0 +1,29 @@
+1
+2
+starting: 09-01-2003
+https://goldsmr5.gesdisc.eosdis.nasa.gov/data/MERRA2/M2I6NPANA.5.12.4/2003/09/MERRA2_300.inst6_3d_ana_Np.20030901.nc4
+contents of URL written to 200309.nc4
+starting: 09-02-2003
+https://goldsmr5.gesdisc.eosdis.nasa.gov/data/MERRA2/M2I6NPANA.5.12.4/2003/09/MERRA2_300.inst6_3d_ana_Np.20030902.nc4
+contents of URL written to 200309.nc4
+(2, 6)
+Making monthly mean: 09
+starting: 10-01-2003
+https://goldsmr5.gesdisc.eosdis.nasa.gov/data/MERRA2/M2I6NPANA.5.12.4/2003/10/MERRA2_300.inst6_3d_ana_Np.20031001.nc4
+contents of URL written to 200310.nc4
+starting: 10-02-2003
+https://goldsmr5.gesdisc.eosdis.nasa.gov/data/MERRA2/M2I6NPANA.5.12.4/2003/10/MERRA2_300.inst6_3d_ana_Np.20031002.nc4
+contents of URL written to 200310.nc4
+(2, 6)
+Making monthly mean: 10
+(2, 6)
+starting: 11-01-2003
+https://goldsmr5.gesdisc.eosdis.nasa.gov/data/MERRA2/M2I6NPANA.5.12.4/2003/11/MERRA2_300.inst6_3d_ana_Np.20031101.nc4
+contents of URL written to 200311.nc4
+starting: 11-02-2003
+https://goldsmr5.gesdisc.eosdis.nasa.gov/data/MERRA2/M2I6NPANA.5.12.4/2003/11/MERRA2_300.inst6_3d_ana_Np.20031102.nc4
+contents of URL written to 200311.nc4
+(2, 6)
+Making monthly mean: 11
+(3, 6)
+Making seasonal mean: 2003
