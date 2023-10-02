@@ -10,9 +10,9 @@ Sections:
 1. RAW DATA ANALYSIS
 1.1 Data access
 These scripts are designed to efficiently get the data required. They are designed to be dynamic, where you input the 'dataid' and a selection. This selection specifies what the dataid looks like. The options are as follows:
-    Yearly flag = 1: Get all months of a specific year
-    Yearly flag = 0: Get all years of a specific month
-    Yearly flag = 2: Get specific month & specific year
+  Yearly flag = 1: Get all months of a specific year
+  Yearly flag = 0: Get all years of a specific month
+  Yearly flag = 2: Get specific month & specific year
 
 This selection is the same for both datasets. The scripts that get data from each dataset are:
     Zonal dataset: get_data.py
