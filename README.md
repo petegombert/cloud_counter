@@ -7,7 +7,6 @@ Sections:
   1. Raw Data Analysis (zonal&global)
   2. Initial Cloud Occurrence Calculations
 
-****
 1. RAW DATA ANALYSIS
 1.1 Data access
 These scripts are designed to efficiently get the data required. They are designed to be dynamic, where you input the 'dataid' and a selection. This selection specifies what the dataid looks like. The options are as follows:
@@ -40,4 +39,4 @@ The global/thickness dataset has a script that is well equipt & function for bui
 This script is called overview.py, 
 
 
-
+****
