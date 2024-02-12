@@ -3,6 +3,8 @@ Graduate Research project
 
 This repository was created to organize my cloud occurrence master's thesis project. An additional benefit is that it will make it easier for future students to use my research and code to continue investigating this topic.
 
+**Initial code download is done by downloader.py. To get raw occurrence statistics, run 'call_main.py' after all dependencies have been downloaded.
+
 Sections:
   1. Raw Data Analysis (zonal&global)
   2. Initial Cloud Occurrence Calculations
