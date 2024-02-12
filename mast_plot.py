@@ -266,7 +266,7 @@ def low_cloud(lat, lon, data):
     plt.savefig('/uufs/chpc.utah.edu/common/home/u1113223/grad_research/testies.png')
     plt.close()
 
-def overview_plt(lat, lon, data, dz_bot, dz_top, z_bot, z_top, time):
+def overview_plt(lat, lon, data, dz_bot, dz_top, z_bot, z_top, cwd):
     lat = lat[0]
     lon = lon[0]
     fig, ax = plt.subplots(1, 1, figsize=(10,10))
