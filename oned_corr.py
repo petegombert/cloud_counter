@@ -54,10 +54,6 @@ import bam_analysis
 # high_enso_years = ['2006','2009','2012','2015']
 # low_enso_years = ['2013','2014','2016']
 # mean = ['2006','2007','2008','2009','2010','2012','2013','2014','2015','2016']
-z_bot = 0
-z_top = 1000
-dz_bot = 0
-dz_top = 1500
 
 #index = np.array([0.4, -0.7, -0.95, 0.55, -2.5, 0.2, -0.65, 0.3, 1.8, -0.35])
 #index = indexes.enso(months)
@@ -65,7 +61,7 @@ dz_top = 1500
 #-0.3 was taken out of the end index array because 2016 was taken out above
 #index = np.array([0.8, -1.2, -1.1, 1.2, -2.1, -0.2, -0.2, 0.3, 1.9, -0.3])
 
-restrict_domain_call = 0
+
 #**Current domain options**
 #SEP
 # bounds_arr = jja_global_avg.restrict_domain(lat, lon, -5, -40, -100, -70)
@@ -207,6 +203,10 @@ def my_pearson(x, y):
     print(r)
 
 def eof_call_main(years, months, restrict_domain_call, mix_years, latlon_bounds):
+    z_bot = 0
+    z_top = 1000
+    dz_bot = 0
+    dz_top = 1500
     for year in years:
         data_arr = overview.get_data([year], months, mix_years)
         lat = data_arr[0,0]
@@ -259,6 +259,63 @@ def eof_call_main(years, months, restrict_domain_call, mix_years, latlon_bounds)
     return cld_occ_arr, lat, lon
 
 def eof_call_main_2(years, months, restrict_domain_call, mix_years, latlon_bounds):
+    z_bot = 0
+    z_top = 1000
+    dz_bot = 0
+    dz_top = 1500
+    print(years)
+    for year in years:
+        data_arr = overview.get_data([year], months, mix_years)
+        lat = data_arr[0,0]
+        lon = data_arr[0,1]
+        cbtz_bin = data_arr[0,2]
+        cbtz_dbin = data_arr[0,3]
+        dz_bin = data_arr[0,4]
+        dz_dbin = data_arr[0,5]
+
+        restrict_arr = np.array([dz_bin, dz_top, dz_bot, cbtz_bin, z_top, z_bot, dz_dbin, cbtz_dbin], dtype=object)
+
+        cld_cnt_raw = data_arr[:,6]
+        #print(cld_cnt_raw.shape)
+        cld_tot_raw = data_arr[:,-2]
+
+        go_stats_arr = jja_global_avg.go_stats_func(cld_cnt_raw, cld_tot_raw, lat, lon, restrict_arr)
+        cld_occ = go_stats_arr[0]
+        lat = go_stats_arr[1][0]
+        lon = go_stats_arr[2][0]
+
+        if restrict_domain_call == 1:
+            bounds_arr = jja_global_avg.restrict_domain(lat, lon, latlon_bounds[0], latlon_bounds[1],
+                                                        latlon_bounds[2], latlon_bounds[3])
+            print(bounds_arr)
+            # if using go stats function wm, use:
+            # cld_occ, lat, lon = jja_global_avg.region_arr3d(cld_occ, lat, lon, bounds_arr)
+            # else:
+            cld_occ, lat, lon = jja_global_avg.region_arr(cld_occ, lat, lon, bounds_arr)
+        #*This is the way to append together if using go_stats_func_wm
+        # if year == years[0]:
+        #     cld_occ_arr = cld_occ
+        #     continue
+        # cld_occ_arr = np.append(cld_occ_arr, cld_occ, axis=0)
+
+        #*This is the way to append together if using go_stats_func
+        if year == years[0]:
+            cld_occ_arr = np.array([cld_occ])
+            continue
+        cld_occ_arr = np.append(cld_occ_arr, np.array([cld_occ]), axis=0)
+
+        #*This was the old way it was done. Not sure if it will work that well when using go_stats_func_wm
+        # if year == years[0]:
+        #     cld_occ_hold = cld_occ
+        #     continue
+        # if year == years[1]:
+        #     hold_test = go_append(cld_occ_hold, cld_occ, 1)
+        #     continue
+        # hold_test = go_append(hold_test, cld_occ, 0)
+
+    return cld_occ_arr, lat, lon
+
+def eof_call_main_wrestrict(years, months, restrict_domain_call, mix_years, latlon_bounds, z_bot, z_top, dz_bot, dz_top):
     print(years)
     for year in years:
         data_arr = overview.get_data([year], months, mix_years)
@@ -312,6 +369,12 @@ def eof_call_main_2(years, months, restrict_domain_call, mix_years, latlon_bound
     return cld_occ_arr, lat, lon
             
 if __name__ == '__main__':
+    z_bot = 0
+    z_top = 1000
+    dz_bot = 0
+    dz_top = 1500
+    restrict_domain_call = 0
+
     months_arr = np.arange(3,6)
     # months_arr = np.array([12,1,2])
     months = go_stats.make_np_list(months_arr)
