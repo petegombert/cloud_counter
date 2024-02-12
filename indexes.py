@@ -28,13 +28,6 @@ import cartopy.crs as ccrs
 import cartopy.feature as feature
 from warnings import filterwarnings
 import get_data
-import mast_plot
-import go_stats
-import build_ann_anom
-import coarsify
-import diveinnewdata
-import jja_global_avg
-import overview
 import datetime
 
 def enso(months, years, mix_years):
