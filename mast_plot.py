@@ -281,7 +281,7 @@ def overview_plt(lat, lon, data, dz_bot, dz_top, z_bot, z_top, cwd):
     fig.suptitle('Global Cloud Occurrence. Cloud base: '+str(z_bot)+'-'+str(z_top)+' Thickness: '+str(dz_bot)+'-'+str(dz_top))
     ax.set_xlabel('Longitude')
     ax.set_ylabel('Latitude')
-    plt.savefig(cwd+ str(dz_bot)+'_'+str(dz_top)
+    plt.savefig(cwd+'/'+ str(dz_bot)+'_'+str(dz_top)
                 +'__'+str(z_bot)+'_'+str(z_top)+'.png')
     plt.close()
 
