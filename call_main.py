@@ -47,6 +47,6 @@ if __name__ == '__main__':
         print('Dataset 2')
         cld_arr, lat, lon = oned_corr.eof_call_main_wrestrict(years, months, restrict_domain_call, 0, latlon_bounds, z_bot, z_top, dz_bot, dz_top)
 
-        mast_plot.overview_plt(lat, lon, cld_arr, dz_bot, dz_top, z_bot, z_top, time, cwd)
+        mast_plot.overview_plt(lat, lon, cld_arr, dz_bot, dz_top, z_bot, z_top, cwd)
         
   
