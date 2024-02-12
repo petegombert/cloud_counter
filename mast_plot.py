@@ -46,8 +46,6 @@ from astropy.time import Time
 import astropy.units as u
 import subprocess
 from warnings import filterwarnings
-import get_data
-import indexes
 from mpl_toolkits.axes_grid1 import make_axes_locatable
 import matplotlib.axes as maxes
 
