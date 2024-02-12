@@ -7,6 +7,7 @@ import oned_corr
 import go_stats
 import os
 import mast_plot
+import numpy as np
 
 #*****This is where the dataset is selected. id=1 is the zonal dataset & id=2 is the global cloud occurrence dataset.
 
