@@ -283,8 +283,8 @@ def overview_plt(lat, lon, data, dz_bot, dz_top, z_bot, z_top, cwd):
     fig.suptitle('Global Cloud Occurrence. Cloud base: '+str(z_bot)+'-'+str(z_top)+' Thickness: '+str(dz_bot)+'-'+str(dz_top))
     ax.set_xlabel('Longitude')
     ax.set_ylabel('Latitude')
-    plt.savefig('/uufs/chpc.utah.edu/common/home/u1113223/grad_research/overview_plots/'+ str(dz_bot)+'_'+str(dz_top)
-                +'__'+str(z_bot)+'_'+str(z_top)+time+'.png')
+    plt.savefig(cwd+ str(dz_bot)+'_'+str(dz_top)
+                +'__'+str(z_bot)+'_'+str(z_top)+'.png')
     plt.close()
 
 def overview_plt_rd(lat, lon, data, dz_bot, dz_top, z_bot, z_top, bound_arr, r_nickname):
