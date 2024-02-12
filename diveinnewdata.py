@@ -28,7 +28,6 @@ from warnings import filterwarnings
 import get_data
 import mast_plot
 import go_stats
-import build_ann_anom
 import coarsify
 
 #first lets look at cloud_column count & total column count.
