@@ -20,6 +20,10 @@ def give_me_data2(years, months, z_bot, z_top, dz_bot, dz_top):
     """
   This function is the callable version of this script for dataset 2.
     """
+    cld_arr, lat, lon = oned_corr.eof_call_main_wrestrict(years, months, restrict_domain_call, 0, latlon_bounds, z_bot, z_top, dz_bot, dz_top)
+    cld_arr_send = np.mean(cld_arr, axis=0)
+
+    return cld_arr, lat, lon
 
 if __name__ == '__main__':
     cwd = os.getcwd()
