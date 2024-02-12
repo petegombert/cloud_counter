@@ -4,9 +4,9 @@ If you wish to do something with it, import it like any other package (script mu
 ones that import it) and call 'call_main.give_me_data1() or call_main.give_me_data2()'
 """
 import oned_corr
-import zonal
 import go_stats
 import os
+import mast_plot
 
 #*****This is where the dataset is selected. id=1 is the zonal dataset & id=2 is the global cloud occurrence dataset.
 
@@ -19,7 +19,6 @@ def give_me_data2(years, months, z_bot, z_top, dz_bot, dz_top):
     """
   This function is the callable version of this script for dataset 2.
     """
-  years, months, restrict_domain_call, mix_years, latlon_bounds, z_bot, z_top, dz_bot, dz_top
 
 if __name__ == '__main__':
     cwd = os.getcwd()
