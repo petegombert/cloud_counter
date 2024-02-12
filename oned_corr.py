@@ -36,14 +36,11 @@ from warnings import filterwarnings
 import get_data
 import mast_plot
 import go_stats
-import build_ann_anom
 import coarsify
 import diveinnewdata
 import jja_global_avg
 import overview
-import atmos_6040_final
 import indexes
-import bam_analysis
 
 #months = ['09','10','11']
 # months_arr = np.arange(1,13)
